@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>View</title>
+</head>
+<body>
+    <h1>Tabela computador:</h1>
+    {%if lista_computador.__len__() == 0 %}
+    <h3>Não há nenhum registro na tabela. Insira algo.</h3>
+    {%endif%}    
+    <table border = "1">
+        <thead>
+            <th>Nome do computador</th>
+            <th>Descrição essencial do computador</th>
+            <th>Preço (em R$) do computador</th>
+        </thead>
+        <tbody>
+            {%for registro in lista_computador%}
+            <tr>
+                <td>{{registro['nomeComputador']}}</td>
+                <td>{{registro['descricaoEssencial']}}</td>
+                <td>{{registro['precoRS']}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</body>
+</html>
